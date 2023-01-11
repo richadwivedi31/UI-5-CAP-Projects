@@ -1,0 +1,139 @@
+<mvc:View controllerName="assignment2.controller.View1" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page id="productPage" showHeader="false" enableScrolling="true" class="sapUiContentPadding" showNavButton="false">
+        <content>
+            <Table id="table1" headerText="{i18n>assignment2Title}" width="auto" items="{/Products}" growing="true" growingScrollToLoad="true" alternateRowColors="true">
+                <headerToolbar>
+                    <OverflowToolbar id="oftb1">
+                        <Title id="titleProduct" text="Products" level="H2" />
+                        <ToolbarSpacer id="toolbarSpacer1"/>
+                        <Button id="addButton" text="Add" type="Transparent" icon="sap-icon://add" press="onAdd" />
+                        <!-- <Button id="editButton" text="Edit" type="Transparent" press="onEdit" /> -->
+                        <SearchField id="sf1" placeholder="Filter" search="onFilterProducts" width="auto" />
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column id="column1">
+                        <Text text="{i18n>productID}" id="productIdNamecolumn" />
+                    </Column>
+
+                    <Column id="column2">
+                        <Text text="{i18n>Manufacturer}" id="Manufacturercolumn" />
+                    </Column>
+
+                    <Column id="column3">
+                        <Text text="{i18n>Category}" id="Categorycolumn" />
+                    </Column>
+
+                    <Column id="column4">
+                        <Text text="{i18n>Screen_Size}" id="Screen_Sizecolumn" />
+                    </Column>
+
+                    <Column id="column5">
+                        <Text text="{i18n>Screen}" id="Screencolumn" />
+                    </Column>
+
+                    <Column id="column6">
+                        <Text text="{i18n>CPU}" id="CPUcolumn" />
+                    </Column>
+                    <Column id="column7">
+                        <Text text="{i18n>RAM}" id="RAMcolumn" />
+                    </Column>
+                    <Column id="column8">
+                        <Text text="{i18n>Storage}" id="Storagecolumn" />
+                    </Column>
+                    <Column id="column9">
+                        <Text text="{i18n>GPU}" id="GPUcolumn" />
+                    </Column>
+                    <Column id="column10">
+                        <Text text="{i18n>Weight}" id="Weightcolumn" />
+                    </Column>
+                    <Column id="column11">
+                        <Text text="{i18n>Price}" id="Pricecolumn" />
+                    </Column>
+                </columns>
+
+                <ColumnListItem id="CLI1" type="Active" press="onTableItemSelected">
+                    <ObjectIdentifier id="ob1" title="{ProductID}" text="{Model_Name}" />
+                    <Text id="t2" text="{Manufacturer}" />
+                    <Text id="t3" text="{Category}" />
+                    <Text id="t4" text="{Screen_Size}" />
+                    <Text id="t5" text="{Screen}" />
+                    <Text id="t6" text="{CPU}" />
+                    <Text id="t7" text="{RAM}" />
+                    <Text id="t8" text="{Storage}" />
+                    <Text id="t9" text="{GPU}" />
+                    <Text id="t10" text="{Weight}" />
+                    <ObjectNumber id="on1" number="{Price_In_Euros}" state="{path : 'Price_In_Euros',
+                                type: 'sap.ui.model.type.Integer',
+                                formatter: '.formatter.priceState'}" />
+                    <!-- <ObjectNumber id="on1"
+                        number="{Price_In_Euros}"
+                        state="{= ${Price_In_Euros} &gt; 100 ? 'Error' : 'Warning'}"  
+                    /> -->
+                </ColumnListItem>
+            </Table>
+        </content>
+    </Page>
+
+    <!-- <semantic:SemanticPage id="spg1">
+        <semantic:titleHeading>
+            <Title text="{i18n>assignment2Title}" level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:content>
+            <Table
+                id="table1"
+                width="auto"
+                items="{
+                    path:'/Products'
+                }"
+                growing="true"
+                growingScrollToLoad="true">
+
+                <columns>
+                    <Column id="column1">
+                        <Text text="{i18n>productID}" id="productIdNamecolumn"/>
+                    </Column>
+
+                    <Column id="column2">
+                        <Text text="{i18n>Manufacturer}" id="Manufacturercolumn"/>
+                    </Column>
+
+                    <Column id="column3">
+                        <Text text="{i18n>Category}" id="Categorycolumn"/>
+                    </Column>                    
+
+                    <Column id="column4">
+                        <Text text="{i18n>Price}" id="Pricecolumn"/>
+                    </Column>  
+                </columns>
+
+                <items>
+                    <ColumnListItem id="CLI1"
+                        type="Navigation"
+                        press=".onPress">
+
+                        <cells>
+                            <ObjectIdentifier id="ob1"
+                                title="{ProductID}"
+                                text="{Model_Name}"/>
+                            <Text id="t2" text="{Manufacturer}"/>
+                            <Text id="t3" text="{Category}"/>
+                            <ObjectNumber id="on1"
+                                number="{
+                                    path : 'Price_In_Euros'
+                                    }"
+                                state="{= ${Price_In_Euros} &gt; 100 ? 'Error' : 'Warning' }"
+            
+                            />
+                        </cells>
+
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+        </semantic:content>
+
+    </semantic:SemanticPage> -->
+</mvc:View>

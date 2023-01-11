@@ -1,0 +1,54 @@
+<mvc:View controllerName="assignment2.controller.Add" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+    <Page id="addPage" title="{i18n>addPageTitle}" showNavButton="true" navButtonPress="onNavPress">
+        <content>
+            <f:SimpleForm id="form1" title="{i18n>formTitle}" editable="true" class="editableForm" width="50%">
+                <f:content>
+                    <Label id="Manufacturer" text="{i18n>Manufacturer}" />
+                    <Input id="ManufacturerInput" />
+
+                    <Label id="Model_Name" text="{i18n>Model_Name}" />
+                    <Input id="Model_NameInput" />
+
+                    <Label id="Category" text="{i18n>Category}" />
+                    <Input id="CategoryInput" />
+
+                    <Label id="Screen_Size" text="{i18n>Screen_Size}" />
+                    <Input id="Screen_SizeInput" />
+
+                    <Label id="Screen" text="{i18n>Screen}" />
+                    <Input id="ScreenInput" />
+
+                    <Label id="CPU" text="{i18n>CPU}" />
+                    <Input id="CPUInput" />
+
+                    <Label id="RAM" text="{i18n>RAM}" />
+                    <Input id="RAMInput" />
+
+                    <Label id="Storage" text="{i18n>Storage}" />
+                    <Input id="StorageInput" />
+
+                    <Label id="GPU" text="{i18n>GPU}" />
+                    <Input id="GPUInput" />
+
+                    <Label id="Operating_System" text="{i18n>Operating_System}" />
+                    <Input id="Operating_SystemInput" />
+
+                    <Label id="Operating_System_Version" text="{i18n>Operating_System_Version}" />
+                    <Input id="Operating_System_VersionInput" />
+
+                    <Label id="Weight" text="{i18n>Weight}" />
+                    <Input id="WeightInput" />
+
+                    <Label id="Price_In_Euros" text="{i18n>Price_In_Euros}" />
+                    <Input id="Price_In_EurosInput" />
+                </f:content>
+            </f:SimpleForm>
+
+            <Toolbar id="idToolbar1">
+                <ToolbarSpacer id="idToolbarSapcer" />
+                <Button id="saveButton" text="{i18n>saveButton}" icon="sap-icon://save" press="onSave"/>
+                <Button id="cancelButton" text="{i18n>cancelButton}" press="onCancel"/>
+            </Toolbar>
+        </content>
+    </Page>
+</mvc:View>

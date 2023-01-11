@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="ProductService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Products" EntityType="ProductService.Products"/>
+            </EntityContainer>
+            <EntityType Name="Products">
+                <Key>
+                    <PropertyRef Name="ProductID"/>
+                </Key>
+                <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Manufacturer" Type="Edm.String"/>
+                <Property Name="Model_Name" Type="Edm.String"/>
+                <Property Name="Category" Type="Edm.String"/>
+                <Property Name="Screen_Size" Type="Edm.String"/>
+                <Property Name="Screen" Type="Edm.String"/>
+                <Property Name="CPU" Type="Edm.String"/>
+                <Property Name="RAM" Type="Edm.String"/>
+                <Property Name="Storage" Type="Edm.String"/>
+                <Property Name="GPU" Type="Edm.String"/>
+                <Property Name="Operating_System" Type="Edm.String"/>
+                <Property Name="Operating_System_Version" Type="Edm.String"/>
+                <Property Name="Weight" Type="Edm.String"/>
+                <Property Name="Price_In_Euros" Type="Edm.Int32"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
