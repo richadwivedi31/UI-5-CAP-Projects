@@ -3,8 +3,11 @@
         <content>
             <f:SimpleForm id="form2" editable="true" layout="ResponsiveGridLayout" singleContainerFullSize="false">
                 <f:content>
+                    <Label id="ID" text="Product ID" />
+                    <Input id="IdInput" value="{ProductID}" editable="false" />
+
                     <Label id="Manufacturer" text="{i18n>Manufacturer}" />
-                    <Input id="iManufacturerInput" value="{Manufacturer}" />
+                    <Input id="ManufacturerInput" value="{Manufacturer}" />
 
                     <Label id="Model_Name" text="{i18n>Model_Name}" />
                     <Input id="Model_NameInput" value="{Model_Name}" />
@@ -44,6 +47,10 @@
                 </f:content>
             </f:SimpleForm>
         </content>
+
+        <beginButton>
+            <Button id="saveChangesButton" text="save" press=".onPressSave"></Button>
+        </beginButton>
 
         <endButton>
             <Button id="cancelChangesButton"  text="Close" press=".onPressCancel" />

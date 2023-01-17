@@ -7,6 +7,7 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^6",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.17",
     "express": "^4"
   },
   "devDependencies": {
@@ -16,7 +17,8 @@
   "scripts": {
     "start": "cds run",
     "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-assignment2": "cds watch --open assignment2/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-assignment2": "cds watch --open assignment2/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-assignment3": "cds watch --open assignment3/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "engines": {
     "node": "^16.15"
@@ -60,6 +62,7 @@
     "app/project1",
     "app/assignment2",
     "app/project1",
-    "app/assignment2"
+    "app/assignment2",
+    "app/assignment3"
   ]
 }

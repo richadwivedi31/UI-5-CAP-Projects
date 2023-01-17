@@ -4,18 +4,18 @@ sap.ui.define([
     "sap/ui/model/FilterOperator",
     "../model/formatter",
     "sap/ui/core/Fragment",
-    "sap/base/Log"
+    "sap/m/MessageToast"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Filter, FilterOperator, formatter, Fragment, Log) {
+    function (Controller, Filter, FilterOperator, formatter, Fragment, MessageToast) {
         "use strict";
 
         return Controller.extend("assignment2.controller.View1", {
-            // onInit: function () {
+            onInit: function () {
 
-            // }
+            },
             formatter: formatter,
             onFilterProducts: function (oEvent) {
 
@@ -43,44 +43,45 @@ sap.ui.define([
                 oRouter.navTo("add");
             },
 
-            onTableItemSelected: function (oEvent) {
+            onPressEdit: function (oEvent) {
 
-                var oView=this.getView();
+                var oView = this.getView();
                 var clickedProductId = oEvent.getSource().getBindingContext().getPath();
 
                 //create the dialog lazily
 
-                if(!this.byId("oDialog")){
+                if (!this.byId("editDialog1")) {
                     //load asynchronously  xml fragment
                     Fragment.load({
                         id: oView.getId(),
-                        name: "assignment2.view.Edit"
-                    }).then(function (oDialog){
-                        this.oDialog=oDialog;
+                        name: "assignment2.view.Edit",
+                        controller: this
+                    }).then(function (oDialog) {
+                        this.oDialog = oDialog;
                         //connect dialog to the view of this component
                         oView.addDependent(oDialog);
-                        this.oDialog.open();   
+                        this.oDialog.open();
                         this.oDialog.bindElement({
-                            path:clickedProductId
+                            path: clickedProductId
                         });
-                    }.bind(this))
+                    }.bind(this));
                 }
-                else{
+                else {
                     this.byId("editDialog1").open();
                 }
-                return;
             },
 
-            onPressSave: function(){         
+            // onPressSave: function(){         
 
-            },
+            // },
 
-            onPressCancel: function(){
+            onPressCancel: function (oEvent) {
+                // MessageToast.show("cancel button is clicked");
+                //console.log("check1: cancel button is clicked");
 
-                //Log.info("check1: cancel button is clicked");
-               // this.oDialog.close();
-               this.byId("editDialog1").close();
-                
+                this.byId("editDialog1").close();
+
+
             }
 
         });

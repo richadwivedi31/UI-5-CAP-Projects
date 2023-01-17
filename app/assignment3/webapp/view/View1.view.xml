@@ -1,7 +1,18 @@
-<mvc:View controllerName="assignment2.controller.View1" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View controllerName="assignment3.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout">
     <Page id="productPage" showHeader="false" enableScrolling="true" class="sapUiContentPadding" showNavButton="false">
         <content>
-            <Table id="table1" headerText="{i18n>assignment3Title}" width="auto" items="{/Products}" growing="true" growingScrollToLoad="true" alternateRowColors="true">
+            <Table id="table1" headerText="{i18n>assignment2Title}" width="auto" 
+            items="{path: '/Products', 
+                    sorter: {
+                        path: 'Manufacturer',
+                        group: true 
+                        }
+                    }" 
+                growing="true" growingScrollToLoad="true" alternateRowColors="true">
                 <headerToolbar>
                     <OverflowToolbar id="oftb1">
                         <Title id="titleProduct" text="Products" level="H2" />
@@ -13,13 +24,13 @@
                 </headerToolbar>
 
                 <columns>
-                    <Column id="column1">
-                        <Text text="{i18n>productID}" id="productIdNamecolumn" />
+                    <Column id="column1" >
+                        <Text text="{i18n>productID}" id="productIdNamecolumn"  />
                     </Column>
 
-                    <Column id="column2">
+                    <!-- <Column id="column2">
                         <Text text="{i18n>Manufacturer}" id="Manufacturercolumn" />
-                    </Column>
+                    </Column> -->
 
                     <Column id="column3">
                         <Text text="{i18n>Category}" id="Categorycolumn" />
@@ -59,7 +70,7 @@
 
                 <ColumnListItem id="CLI1" type="Active" press="onTableItemSelected">
                     <ObjectIdentifier id="ob1" title="{ProductID}" text="{Model_Name}" />
-                    <Text id="t2" text="{Manufacturer}" />
+                    <!-- <Text id="t2" text="{Manufacturer}" /> -->
                     <Text id="t3" text="{Category}" />
                     <Text id="t4" text="{Screen_Size}" />
                     <Text id="t5" text="{Screen}" />
@@ -76,10 +87,15 @@
                         state="{= ${Price_In_Euros} &gt; 100 ? 'Error' : 'Warning'}"  
                     /> -->
 
-                    <Button id="editbutton" icon="sap-icon://edit" press="onPressEdit" ></Button>
+                    <cells>
+                        <HBox id="hbox1" justifyContent="SpaceAround" alignItems="Center" >
+                            <Button id="editbutton" icon="sap-icon://edit" press="onPressEdit" />
+                            <Button id="deltebutton" icon="sap-icon://delete" press="onPressDelete" />                        
+                        </HBox>
+                    </cells>
+                    
                 </ColumnListItem>
             </Table>
         </content>
     </Page>
-
 </mvc:View>

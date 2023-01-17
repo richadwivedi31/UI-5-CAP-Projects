@@ -1,46 +1,47 @@
-<mvc:View controllerName="assignment2.controller.Add" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+<mvc:View controllerName="assignment3.controller.Add" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
     <Page id="addPage" title="{i18n>addPageTitle}" showNavButton="true" navButtonPress="onNavPress">
         <content>
             <f:SimpleForm id="form1" title="{i18n>formTitle}" editable="true" class="editableForm" width="50%">
                 <f:content>
                     <Label id="Manufacturer" text="{i18n>Manufacturer}" />
-                    <Input id="ManufacturerInput" />
+                    <Input id="ManufacturerInput" required="true" valueState="None"/>
 
                     <Label id="Model_Name" text="{i18n>Model_Name}" />
-                    <Input id="Model_NameInput" />
+                    <Input id="Model_NameInput" required="true"/>
 
                     <Label id="Category" text="{i18n>Category}" />
-                    <Input id="CategoryInput" />
+                    <Input id="CategoryInput" required="true"/>
 
                     <Label id="Screen_Size" text="{i18n>Screen_Size}" />
-                    <Input id="Screen_SizeInput" />
+                    <Input id="Screen_SizeInput" required="true"/>
 
                     <Label id="Screen" text="{i18n>Screen}" />
-                    <Input id="ScreenInput" />
+                    <Input id="ScreenInput" required="true"/>
 
                     <Label id="CPU" text="{i18n>CPU}" />
-                    <Input id="CPUInput" />
+                    <Input id="CPUInput" required="true"/>
 
                     <Label id="RAM" text="{i18n>RAM}" />
-                    <Input id="RAMInput" />
+                    <Input id="RAMInput" required="true"/>
 
                     <Label id="Storage" text="{i18n>Storage}" />
-                    <Input id="StorageInput" />
+                    <Input id="StorageInput" required="true"/>
 
                     <Label id="GPU" text="{i18n>GPU}" />
-                    <Input id="GPUInput" />
+                    <Input id="GPUInput" required="true"/>
 
                     <Label id="Operating_System" text="{i18n>Operating_System}" />
-                    <Input id="Operating_SystemInput" />
+                    <Input id="Operating_SystemInput" required="true"/>
 
                     <Label id="Operating_System_Version" text="{i18n>Operating_System_Version}" />
-                    <Input id="Operating_System_VersionInput" />
+                    <Input id="Operating_System_VersionInput" required="true"/>
 
                     <Label id="Weight" text="{i18n>Weight}" />
-                    <Input id="WeightInput" />
+                    <Input id="WeightInput" required="true"/>
 
-                    <!-- <Label id="Price_In_Euros" text="{i18n>Price_In_Euros}" />
-                    <Input id="Price_In_EurosInput" type="Number"  /> -->
+                    <Label id="Price_In_Euros" text="{i18n>Price_In_Euros}" />
+                    <Input id="Price_In_EurosInput" type="Number" required="true" />
+
                 </f:content>
             </f:SimpleForm>
 
