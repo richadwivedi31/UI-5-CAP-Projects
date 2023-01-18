@@ -6,12 +6,7 @@
     <Page id="productPage" showHeader="false" enableScrolling="true" class="sapUiContentPadding" showNavButton="false">
         <content>
             <Table id="table1" headerText="{i18n>assignment2Title}" width="auto" 
-            items="{path: '/Products', 
-                    sorter: {
-                        path: 'Manufacturer',
-                        group: true 
-                        }
-                    }" 
+            items="{path: '/Products'}" 
                 growing="true" growingScrollToLoad="true" alternateRowColors="true">
                 <headerToolbar>
                     <OverflowToolbar id="oftb1">
@@ -20,6 +15,7 @@
                         <Button id="addButton" text="Add" type="Transparent" icon="sap-icon://add" press="onAdd" />
                         <!-- <Button id="editButton" text="Edit" type="Transparent" press="onEdit" /> -->
                         <SearchField id="sf1" placeholder="Filter" search="onFilterProducts" width="auto" />
+                        <Button id="sortButton" icon="sap-icon://sort" press=".onSort"/>
                     </OverflowToolbar>
                 </headerToolbar>
 

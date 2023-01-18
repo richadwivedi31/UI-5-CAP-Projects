@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="viewSettingsDialog1"
+		confirm="onConfirm">
+		<sortItems>
+            <ViewSettingsItem id="viewSettingsItem1" text="Product ID" key="ProductID" selected="true" />
+			<ViewSettingsItem id="viewSettingsItem2" text="Category" key="Category"/>
+			<ViewSettingsItem id="viewSettingsItem4" text="Weight" key="Weight" />
+			<ViewSettingsItem id="viewSettingsItem5" text="Price" key="Price_In_Euros" />
+		</sortItems>
+
+		<groupItems>
+      		<ViewSettingsItem id="viewSettingsItem6" key="Manufacturer" text="Manufacturer"/>
+			<ViewSettingsItem id="viewSettingsItem7" key="Category" text="Category"/>
+    	</groupItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

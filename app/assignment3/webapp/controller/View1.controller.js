@@ -4,12 +4,15 @@ sap.ui.define([
     "sap/ui/model/FilterOperator",
     "../model/formatter",
     "sap/ui/core/Fragment",
-    "sap/m/MessageToast"
+    "sap/m/MessageToast",
+    'sap/ui/model/Sorter',
+    'sap/m/Menu',
+    'sap/m/MenuItem'
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Filter, FilterOperator, formatter, Fragment, MessageToast) {
+    function (Controller, Filter, FilterOperator, formatter, Fragment, MessageToast, Sorter, Menu, MenuItem) {
         "use strict";
 
         return Controller.extend("assignment3.controller.View1", {
@@ -128,6 +131,51 @@ sap.ui.define([
                 this.byId("editDialog1").destroy();
 
 
+            },
+
+            onSort: function(oEvent){
+                var oView=this.getView();
+                if (!this.byId("viewSettingsDialog1")) {
+                    Fragment.load({
+                        id: oView.getId(),
+                        name: "assignment3.view.sortDialog",
+                        controller: this
+                    }).then(function (oDialog) {
+                        this.oDialog = oDialog;
+                        oView.addDependent(oDialog);
+                        this.oDialog.open();
+                    }.bind(this));
+                }
+                else {
+                    this.byId("viewSettingsDialog1").open();
+                } 
+            },
+
+            onConfirm: function(oEvent){
+                var oView=this.getView();
+                var oTable = this.byId("table1");
+                var mParams=oEvent.getParameters();
+                var oBinding=oTable.getBinding("items");
+
+                var aSorters=[];
+
+                var sPath = mParams.sortItem.getKey();
+                var bDescending = mParams.sortDescending;
+                aSorters.push(new sap.ui.model.Sorter(sPath, bDescending));
+                oBinding.sort(aSorters);
+
+                // if (mParams.groupItem) {
+                //     var sPath = mParams.groupItem.getKey();
+                //     var bDescending = mParams.groupDescending;
+                //     var vGroup = function(oContext) {
+                //       var name = oContext.getProperty("Manufacturer");
+                //       return {
+                //         key: name,
+                //         text: name
+                //       };
+                //     };
+                //     aSorters.push(new sap.ui.model.Sorter(sPath, bDescending, vGroup));
+                //   }
             }
 
         });
