@@ -28,7 +28,7 @@ sap.ui.define([
                 var sQuery = oEvent.getParameter("query");
 
                 if (sQuery) {
-                    aFilter.push(new Filter("Manufacturer", FilterOperator.Contains, sQuery));
+                    aFilter.push(new Filter("Category", FilterOperator.Contains, sQuery));
 
                 }
 
