@@ -103,7 +103,6 @@ sap.ui.define([
                 });
             },
 
-
             onNavPress: function () {
 
                 // this.resetChanges();
@@ -114,6 +113,5 @@ sap.ui.define([
                 this.onNavPress();
 
             }
-
         });
     });

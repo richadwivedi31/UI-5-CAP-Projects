@@ -71,9 +71,26 @@ sap.ui.define([
                 }
             },
 
-            // onPressSave: function(){         
+            onPressSave: function(){         
+                var oModel=this.getView().getModel();
+                oModel.submitBatch("myAppUpdateGroup");
 
-            // },
+                this.byId("iManufacturerInput").setEditable(false);
+                this.byId("Model_NameInput").setEditable(false);
+                this.byId("CategoryInput").setEditable(false);
+                this.byId("Screen_SizeInput").setEditable(false);
+                this.byId("ScreenInput").setEditable(false);
+                this.byId("CPUInput").setEditable(false);
+                this.byId("RAMInput").setEditable(false);
+                this.byId("StorageInput").setEditable(false);
+                this.byId("GPUInput").setEditable(false);
+                this.byId("Operating_SystemInput").setEditable(false);
+                this.byId("Operating_System_VersionInput").setEditable(false);
+                this.byId("WeightInput").setEditable(false);
+                this.byId("Price_In_EurosInput").setEditable(false);
+
+               this.byId("saveChangesButton").setVisible(false);
+            },
 
             onPressCancel: function (oEvent) {
                 // MessageToast.show("cancel button is clicked");

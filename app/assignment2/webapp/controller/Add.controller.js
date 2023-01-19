@@ -28,12 +28,29 @@ sap.ui.define([
                     "Operating_System": this.byId("Operating_SystemInput").getValue(),
                     "Operating_System_Version": this.byId("Operating_System_VersionInput").getValue(),
                     "Weight": this.byId("WeightInput").getValue(),
-                    "Price_In_Euros": 1
-                    // "Price_In_Euros": this.byId("Price_In_EurosInput").getValue()
+                    "Price_In_Euros": 100
                 }
-
+                
+                this.getOwnerComponent().getModel().submitBatch("myAppUpdateGroup");
                 var oListBinding=this.getOwnerComponent().getModel().bindList("/Products");
                 oListBinding.create(data);
+
+                this.byId("ManufacturerInput").setEditable(false);
+                this.byId("Model_NameInput").setEditable(false);
+                this.byId("CategoryInput").setEditable(false);
+                this.byId("Screen_SizeInput").setEditable(false);
+                this.byId("ScreenInput").setEditable(false);
+                this.byId("CPUInput").setEditable(false);
+                this.byId("RAMInput").setEditable(false);
+                this.byId("StorageInput").setEditable(false);
+                this.byId("GPUInput").setEditable(false);
+                this.byId("Operating_SystemInput").setEditable(false);
+                this.byId("Operating_System_VersionInput").setEditable(false);
+                this.byId("WeightInput").setEditable(false);
+                // this.byId("Price_In_EurosInput").setEditable(false);
+
+                this.byId("saveButton").setVisible(false);
+                
                 
             },
 
@@ -43,7 +60,8 @@ sap.ui.define([
             },
 
             onCancel: function () {
-                this.resetChanges();
+                // this.resetChanges();
+                this.onNavPress();
             }
 
         });

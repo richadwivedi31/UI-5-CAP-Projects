@@ -44,7 +44,10 @@
                 </f:content>
             </f:SimpleForm>
         </content>
-
+        <beginButton>
+            <Button id="saveChangesButton" text="save" press=".onPressSave"></Button>
+        </beginButton>
+        
         <endButton>
             <Button id="cancelChangesButton"  text="Close" press=".onPressCancel" />
         </endButton>

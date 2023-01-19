@@ -1,7 +1,7 @@
 <mvc:View controllerName="assignment2.controller.View1" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
     <Page id="productPage" showHeader="false" enableScrolling="true" class="sapUiContentPadding" showNavButton="false">
         <content>
-            <Table id="table1" headerText="{i18n>assignment3Title}" width="auto" items="{/Products}" growing="true" growingScrollToLoad="true" alternateRowColors="true">
+            <Table id="table1" headerText="{i18n>assignment3Title}" width="auto" items="{ path: '/Products', $updateGroupId : 'myAppUpdateGroup'}" growing="true" growingScrollToLoad="true" alternateRowColors="true">
                 <headerToolbar>
                     <OverflowToolbar id="oftb1">
                         <Title id="titleProduct" text="Products" level="H2" />
